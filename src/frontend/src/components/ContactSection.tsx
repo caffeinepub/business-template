@@ -15,6 +15,7 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { useSubmitContactForm } from "../hooks/useQueries";
+import SectionHeading from "./SectionHeading";
 
 const contactInfo = [
   {
@@ -68,36 +69,24 @@ export default function ContactSection() {
     <section id="contact" className="py-24 lg:py-32 section-dark">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-sm font-semibold text-gold-400 tracking-widest uppercase mb-3">
-            Get in Touch
-          </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight mb-5">
-            Let's Start a
-            <span className="font-display italic text-gold-400">
-              {" "}
-              Conversation
-            </span>
-          </h2>
-          <p className="text-white/60 text-lg max-w-xl mx-auto font-body mb-5">
-            Tell us about your business goals. A senior advisor will respond
-            within 24 hours.
-          </p>
-
+        <div className="text-center mb-16">
+          <SectionHeading
+            variant="underline"
+            eyebrow="Get in Touch"
+            title="Let's Start a Conversation"
+            highlight="Conversation"
+            subtitle="Tell us about your business goals. A senior advisor will respond within 24 hours."
+            darkMode={true}
+            align="center"
+          />
           {/* Response time badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mt-5">
             <Zap size={13} className="text-gold-400 flex-shrink-0" />
             <span className="text-white/70 text-xs font-body">
               Avg. response time: under 24 hours
             </span>
           </div>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
           {/* Contact info — left */}

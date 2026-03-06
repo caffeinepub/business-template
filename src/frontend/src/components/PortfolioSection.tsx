@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import type { Variants } from "motion/react";
 import { motion } from "motion/react";
+import SectionHeading from "./SectionHeading";
 
 const caseStudies = [
   {
@@ -72,42 +73,15 @@ export default function PortfolioSection() {
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Section header */}
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold-500/30 bg-gold-500/10 mb-5"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-gold-400" />
-            <span className="text-gold-300 text-sm font-medium tracking-wide">
-              Our Work
-            </span>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.08 }}
-            className="font-display text-4xl md:text-5xl font-bold text-white leading-tight tracking-tight mb-4"
-          >
-            Results That{" "}
-            <span className="font-display italic text-gold-400">
-              Speak for Themselves
-            </span>
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.15 }}
-            className="text-white/55 text-lg max-w-xl mx-auto font-body"
-          >
-            Real outcomes from real partnerships. Every number tells a story of
-            strategy, execution, and relentless focus.
-          </motion.p>
+          <SectionHeading
+            variant="badge"
+            eyebrow="Our Work"
+            title="Results That Speak for Themselves"
+            highlight="Speak for Themselves"
+            subtitle="Real outcomes from real partnerships. Every number tells a story of strategy, execution, and relentless focus."
+            darkMode={true}
+            align="center"
+          />
         </div>
 
         {/* Case study grid */}

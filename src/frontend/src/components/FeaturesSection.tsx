@@ -8,6 +8,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { motion } from "motion/react";
+import SectionHeading from "./SectionHeading";
 
 const features = [
   {
@@ -74,25 +75,16 @@ export default function FeaturesSection() {
     <section id="features" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-sm font-semibold text-gold-500 tracking-widest uppercase mb-3">
-            What We Do
-          </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-5">
-            Services Built for
-            <span className="font-display italic text-gold-500"> Results</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-body leading-relaxed">
-            Six core competencies, one integrated team. We work as an extension
-            of your business — not a vendor.
-          </p>
-        </motion.div>
+        <div className="text-center mb-16">
+          <SectionHeading
+            variant="underline"
+            eyebrow="What We Offer"
+            title="Powerful Features"
+            subtitle="Six core competencies, one integrated team. We work as an extension of your business — not a vendor."
+            darkMode={false}
+            align="center"
+          />
+        </div>
 
         {/* Features grid */}
         <motion.div

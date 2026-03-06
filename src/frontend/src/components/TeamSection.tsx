@@ -1,5 +1,6 @@
 import { Linkedin, Twitter } from "lucide-react";
 import { motion } from "motion/react";
+import SectionHeading from "./SectionHeading";
 
 const team = [
   {
@@ -49,28 +50,17 @@ export default function TeamSection() {
     <section id="team" className="py-24 lg:py-32 section-mid">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-sm font-semibold text-gold-600 tracking-widest uppercase mb-3">
-            The Team
-          </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-5">
-            The People Behind
-            <span className="font-display italic text-gold-500">
-              {" "}
-              Your Growth
-            </span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-body">
-            Senior practitioners, not junior associates. You get expertise and
-            accountability at every level.
-          </p>
-        </motion.div>
+        <div className="text-center mb-16">
+          <SectionHeading
+            variant="default"
+            eyebrow="The Team"
+            title="The People Behind Your Growth"
+            highlight="Your Growth"
+            subtitle="Senior practitioners, not junior associates. You get expertise and accountability at every level."
+            darkMode={false}
+            align="center"
+          />
+        </div>
 
         {/* Team grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

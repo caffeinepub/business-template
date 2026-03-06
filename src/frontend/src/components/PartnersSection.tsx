@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import SectionHeading from "./SectionHeading";
 
 const partners = [
   {
@@ -50,27 +51,17 @@ export default function PartnersSection() {
     <section className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55 }}
-          className="text-center mb-14"
-        >
-          <span className="inline-block text-sm font-semibold text-gold-600 tracking-widest uppercase mb-3">
-            Trusted Partners
-          </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-4">
-            Companies That{" "}
-            <span className="font-display italic text-gold-500">
-              Grow With Us
-            </span>
-          </h2>
-          <p className="text-foreground/65 text-lg max-w-xl mx-auto font-body">
-            From fast-scaling startups to established market leaders — our
-            partners span every stage and sector.
-          </p>
-        </motion.div>
+        <div className="text-center mb-14">
+          <SectionHeading
+            variant="default"
+            eyebrow="Trusted Partners"
+            title="Companies That Grow With Us"
+            highlight="Grow With Us"
+            subtitle="From fast-scaling startups to established market leaders — our partners span every stage and sector."
+            darkMode={false}
+            align="center"
+          />
+        </div>
 
         {/* Partners Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-5 lg:gap-6">

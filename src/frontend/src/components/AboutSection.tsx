@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
+import SectionHeading from "./SectionHeading";
 
 const stats = [
   { value: "500+", label: "Clients Served", desc: "Across 30+ industries" },
@@ -27,15 +28,15 @@ export default function AboutSection() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block text-sm font-semibold text-gold-600 tracking-widest uppercase mb-4">
-              Our Story
-            </span>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-              A Decade of Turning{" "}
-              <span className="font-display italic text-gold-500">
-                Ambition into Achievement
-              </span>
-            </h2>
+            <SectionHeading
+              variant="split"
+              eyebrow="Our Story"
+              title="A Decade of Turning"
+              highlight="Ambition into Achievement"
+              darkMode={false}
+              align="left"
+              className="mb-6"
+            />
 
             <p className="text-foreground/70 text-base leading-relaxed mb-5 font-body">
               Nexara was founded with a single conviction: that every ambitious

@@ -9,6 +9,7 @@ import CookieBanner from "./components/CookieBanner";
 import FaqSection from "./components/FaqSection";
 import FeaturesSection from "./components/FeaturesSection";
 import FooterSection from "./components/FooterSection";
+import HeadingsShowcase from "./components/HeadingsShowcase";
 import HeroSection from "./components/HeroSection";
 import HowItWorksSection from "./components/HowItWorksSection";
 import NavBar from "./components/NavBar";
@@ -43,6 +44,7 @@ export default function App() {
         <AwardsSection />
         <PricingSection />
         <FaqSection />
+        <HeadingsShowcase />
         <BlogSection />
         <TeamSection />
         <ContactSection />

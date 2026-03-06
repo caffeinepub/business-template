@@ -154,6 +154,41 @@
     text-wrap: balance;
   }
 
+  /* ── Animated underline draw ────────────────────────────────────────────── */
+  .animate-underline-draw {
+    animation: underline-draw 0.8s ease forwards;
+    width: 0;
+  }
+
+  @keyframes underline-draw {
+    to {
+      width: 100%;
+    }
+  }
+
+  /* ── Outlined / stroked display text ────────────────────────────────────── */
+  .text-stroke-gold {
+    -webkit-text-stroke: 2px oklch(0.62 0.14 68 / 0.4);
+    color: transparent;
+  }
+
+  .text-stroke-white {
+    -webkit-text-stroke: 1px oklch(1 0 0 / 0.15);
+    color: transparent;
+  }
+
+  /* ── Gradient headline text ──────────────────────────────────────────────── */
+  .text-gradient-gold {
+    background: linear-gradient(
+      135deg,
+      oklch(0.72 0.18 65) 0%,
+      oklch(0.55 0.12 55) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   /* ── Marquee (ClientsStrip) ──────────────────────────────────────────────── */
   .animate-marquee {
     animation: marquee 28s linear infinite;

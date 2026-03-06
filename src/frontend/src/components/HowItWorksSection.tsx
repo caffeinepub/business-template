@@ -1,5 +1,6 @@
 import { ClipboardList, Lightbulb, Rocket, TrendingUp } from "lucide-react";
 import { motion } from "motion/react";
+import SectionHeading from "./SectionHeading";
 
 const steps = [
   {
@@ -53,25 +54,17 @@ export default function HowItWorksSection() {
     <section id="how-it-works" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Section header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55 }}
-          className="text-center mb-20"
-        >
-          <span className="inline-block text-sm font-semibold text-gold-600 tracking-widest uppercase mb-3">
-            Our Process
-          </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-5">
-            How We{" "}
-            <span className="font-display italic text-gold-500">Work</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-body leading-relaxed">
-            Four disciplined steps that turn ambition into outcomes. Every
-            engagement follows this sequence — no shortcuts.
-          </p>
-        </motion.div>
+        <div className="text-center mb-20">
+          <SectionHeading
+            variant="default"
+            eyebrow="Our Process"
+            title="How We Work"
+            highlight="Work"
+            subtitle="Four disciplined steps that turn ambition into outcomes. Every engagement follows this sequence — no shortcuts."
+            darkMode={false}
+            align="center"
+          />
+        </div>
 
         {/* Steps */}
         <motion.div

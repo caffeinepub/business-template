@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Check, Zap } from "lucide-react";
 import { motion } from "motion/react";
+import SectionHeading from "./SectionHeading";
 
 const plans = [
   {
@@ -72,28 +73,18 @@ export default function PricingSection() {
     <section id="pricing" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-sm font-semibold text-gold-500 tracking-widest uppercase mb-3">
-            Pricing
-          </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-5">
-            Transparent Pricing,
-            <span className="font-display italic text-gold-500">
-              {" "}
-              Real Results
-            </span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-body">
-            Every plan includes a 30-day money-back guarantee. No lock-in
-            contracts — cancel anytime.
-          </p>
-        </motion.div>
+        <div className="text-center mb-16 pt-10">
+          <SectionHeading
+            variant="outlined"
+            eyebrow="Pricing"
+            title="Transparent Pricing"
+            highlight="Real Results"
+            outlineText="PRICE"
+            subtitle="Every plan includes a 30-day money-back guarantee. No lock-in contracts — cancel anytime."
+            darkMode={false}
+            align="center"
+          />
+        </div>
 
         {/* Plans grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">

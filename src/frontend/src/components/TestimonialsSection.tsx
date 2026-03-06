@@ -1,5 +1,6 @@
 import { Quote } from "lucide-react";
 import { motion } from "motion/react";
+import SectionHeading from "./SectionHeading";
 
 const testimonials = [
   {
@@ -33,21 +34,15 @@ export default function TestimonialsSection() {
     <section id="testimonials" className="py-24 lg:py-32 section-dark">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-sm font-semibold text-gold-400 tracking-widest uppercase mb-3">
-            Client Stories
-          </span>
-          <h2 className="font-display text-4xl lg:text-5xl font-bold text-white leading-tight">
-            Don't Take Our Word
-            <span className="font-display italic text-gold-400"> for It</span>
-          </h2>
-        </motion.div>
+        <div className="text-center mb-16">
+          <SectionHeading
+            variant="badge"
+            eyebrow="Client Love"
+            title="Don't Take Our Word for It"
+            darkMode={true}
+            align="center"
+          />
+        </div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock } from "lucide-react";
 import { motion } from "motion/react";
+import SectionHeading from "./SectionHeading";
 
 const posts = [
   {
@@ -41,29 +42,17 @@ export default function BlogSection() {
     <section id="blog" className="py-24 lg:py-32 section-mid">
       <div className="container mx-auto px-6 max-w-7xl">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.55 }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14"
-        >
-          <div>
-            <span className="inline-block text-sm font-semibold text-gold-600 tracking-widest uppercase mb-3">
-              Insights & Ideas
-            </span>
-            <h2 className="font-display text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-              From the{" "}
-              <span className="font-display italic text-gold-500">
-                Nexara Blog
-              </span>
-            </h2>
-          </div>
-          <p className="text-foreground/65 text-base font-body max-w-sm">
-            Practical thinking on growth strategy, brand, and execution — no
-            fluff, no filler.
-          </p>
-        </motion.div>
+        <div className="mb-14">
+          <SectionHeading
+            variant="split"
+            eyebrow="Insights & Ideas"
+            title="From the"
+            highlight="Nexara Blog"
+            subtitle="Practical thinking on growth strategy, brand, and execution — no fluff, no filler."
+            darkMode={false}
+            align="left"
+          />
+        </div>
 
         {/* Blog Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
