@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fonts ─────────────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces-Italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces-Regular.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi-Variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────────── */
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Brand palette — deep charcoal + warm gold */
+    --background: 0.98 0.005 75;
+    --foreground: 0.12 0.015 60;
+
+    --card: 1 0 0;
+    --card-foreground: 0.12 0.015 60;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.12 0.015 60;
+
+    /* Gold primary */
+    --primary: 0.62 0.14 68;
+    --primary-foreground: 0.12 0.015 60;
+
+    /* Dark charcoal secondary */
+    --secondary: 0.18 0.018 60;
+    --secondary-foreground: 0.96 0.005 75;
+
+    --muted: 0.94 0.008 75;
+    --muted-foreground: 0.48 0.012 65;
+
+    /* Warm amber accent */
+    --accent: 0.72 0.18 65;
+    --accent-foreground: 0.08 0.01 50;
+
+    --destructive: 0.55 0.22 27;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.01 70;
+    --input: 0.88 0.01 70;
+    --ring: 0.62 0.14 68;
+
+    /* Section backgrounds */
+    --section-dark: 0.13 0.016 58;
+    --section-mid: 0.94 0.01 75;
+
+    --chart-1: 0.646 0.222 68;
+    --chart-2: 0.58 0.13 190;
+    --chart-3: 0.70 0.17 150;
+    --chart-4: 0.75 0.18 55;
+    --chart-5: 0.50 0.14 30;
+
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.62 0.14 68;
+    --sidebar-primary-foreground: 0.12 0.015 60;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.62 0.14 68;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+/* ─── Custom Utilities ───────────────────────────────────────────────────────── */
+
+@layer utilities {
+  .section-dark {
+    background-color: oklch(var(--section-dark));
+    color: oklch(0.96 0.005 75);
+  }
+
+  .section-mid {
+    background-color: oklch(var(--section-mid));
+  }
+
+  .text-gold {
+    color: oklch(var(--accent));
+  }
+
+  .bg-gold {
+    background-color: oklch(var(--primary));
+  }
+
+  .gradient-gold {
+    background: linear-gradient(
+      135deg,
+      oklch(0.65 0.16 68) 0%,
+      oklch(0.55 0.12 55) 100%
+    );
+  }
+
+  .gradient-dark {
+    background: linear-gradient(
+      145deg,
+      oklch(0.13 0.016 58) 0%,
+      oklch(0.18 0.02 55) 50%,
+      oklch(0.11 0.01 65) 100%
+    );
+  }
+
+  .glass-card {
+    background: oklch(1 0 0 / 0.04);
+    border: 1px solid oklch(1 0 0 / 0.12);
+    backdrop-filter: blur(12px);
+  }
+
+  .prose-balance {
+    text-wrap: balance;
+  }
+
+  /* ── Marquee (ClientsStrip) ──────────────────────────────────────────────── */
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
