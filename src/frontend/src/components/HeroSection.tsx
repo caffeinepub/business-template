@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useCountUp } from "@/hooks/useCountUp";
 import { ArrowRight, Play } from "lucide-react";
 import { motion } from "motion/react";
+import ParagraphStyles from "./ParagraphStyles";
 
 const floatingBadges = [
   {
@@ -143,12 +144,29 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="text-lg md:text-xl text-white/65 leading-relaxed mb-10 max-w-2xl font-body"
+            className="text-lg md:text-xl text-white/65 leading-relaxed mb-6 max-w-2xl font-body"
           >
             We help ambitious companies unlock sustainable growth through
             strategic clarity, data-driven decisions, and relentless execution.
             Your success is our obsession.
           </motion.p>
+
+          {/* Mission callout */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.45 }}
+            className="mb-10 max-w-2xl"
+          >
+            <ParagraphStyles
+              variant="callout"
+              className="bg-white/6 border-gold-400/25 text-white/75"
+            >
+              <span className="font-semibold text-gold-300">Our mission:</span>{" "}
+              to democratize world-class strategic thinking — making it
+              accessible to every ambitious company, not just the Fortune 500.
+            </ParagraphStyles>
+          </motion.div>
 
           {/* CTAs */}
           <motion.div

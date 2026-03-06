@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Pricing", href: "#pricing", ocid: undefined },
   { label: "FAQ", href: "#faq", ocid: undefined },
   { label: "Headings", href: "#headings", ocid: "nav.headings.link" },
+  { label: "Typography", href: "#typography", ocid: "nav.typography_link" },
   { label: "Blog", href: "#blog", ocid: "nav.blog.link" },
   { label: "Team", href: "#team", ocid: undefined },
   { label: "Contact", href: "#contact", ocid: undefined },

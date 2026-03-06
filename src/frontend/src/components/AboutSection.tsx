@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
+import ParagraphStyles from "./ParagraphStyles";
 import SectionHeading from "./SectionHeading";
 
 const stats = [
@@ -38,12 +39,12 @@ export default function AboutSection() {
               className="mb-6"
             />
 
-            <p className="text-foreground/70 text-base leading-relaxed mb-5 font-body">
+            <ParagraphStyles variant="lead" className="mb-5">
               Nexara was founded with a single conviction: that every ambitious
               company deserves access to the same calibre of strategic thinking
               that the Fortune 500 takes for granted. We levelled the playing
               field.
-            </p>
+            </ParagraphStyles>
             <p className="text-foreground/70 text-base leading-relaxed mb-8 font-body">
               Today, our team of 60+ practitioners works shoulder-to-shoulder
               with growth-stage companies, private equity portfolio businesses,

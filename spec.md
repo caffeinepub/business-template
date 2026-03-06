@@ -1,28 +1,30 @@
 # Business Template
 
 ## Current State
-A full-featured business landing page with sections: NavBar, Hero, Stats, ClientsStrip, Features, Portfolio, Partners, HowItWorks, About, Testimonials, Awards, Pricing, FAQ, Blog, Team, Contact, Footer, Newsletter banner, Cookie banner. Uses a charcoal + gold OKLCH design system with Cabinet Grotesk / Fraunces / Satoshi fonts.
+Full-stack business template with 20+ sections: NavBar, HeroSection, StatsSection, ClientsStrip, FeaturesSection, PortfolioSection, PartnersSection, HowItWorksSection, AboutSection, TestimonialsSection, AwardsSection, PricingSection, FaqSection, HeadingsShowcase, BlogSection, TeamSection, ContactSection, FooterSection, NewsletterBanner, CookieBanner. Includes SectionHeading component with 5 variants. All sections use motion/react animations, gold/charcoal design tokens, scroll effects, and count-up stats.
 
 ## Requested Changes (Diff)
 
 ### Add
-- **SectionHeading component**: A reusable `SectionHeading` component with multiple visual variants: `default` (eyebrow + large title + subtitle), `split` (title split with gold italic word), `underline` (animated gold underline), `outlined` (large outlined/stroked display text behind solid title), and `badge` (pill badge above title). All variants include optional subtitle and centered/left alignment.
-- **HeadingsShowcase section**: A dedicated page section (`id="headings"`) that showcases the heading variants with sample content, acting as a visual design reference and enriching the template.
-- **Nav link** for "Headings" pointing to `#headings`, inserted between FAQ and Blog.
+- **Typography Design System Showcase** — a new dedicated section (`#typography`) showing rich paragraph styles: lead paragraph, body copy, blockquote, pull quote, small print/caption, and highlighted callout text. Each style should display a representative paragraph with its HTML/CSS class label, demonstrating professional paragraph design patterns.
+- **Rich Text Content** — upgrade key sections with richer paragraph content: add a longer, multi-paragraph intro to the About section with a visually styled lead paragraph; add paragraph-style service descriptions to the Features section below the card grid; add a mission statement paragraph block to the Hero area.
+- **Paragraph Variants Component** — a reusable `ParagraphStyles` component with named variants: `lead`, `body`, `caption`, `blockquote`, `pull-quote`, `callout`. Used in the typography showcase and optionally in other sections.
 
 ### Modify
-- **All existing section headings**: Replace inline heading markup in every section component with the new `SectionHeading` component, choosing the most appropriate variant per section.
-- **index.css**: Add CSS for heading effects — outlined/stroked text, animated underline, and decorative gradient text utility classes.
-- **tailwind.config.js**: Ensure any new animation keyframes (underline draw) are registered if not already covered.
+- **NavBar** — add a "Typography" link pointing to `#typography`.
+- **FooterSection** — add "Typography" link in the site links column; update copyright year if needed.
+- **App.tsx** — import and render the new `TypographySection` between `HeadingsShowcase` and `BlogSection`.
+- **AboutSection** — wrap the opening paragraph in the `lead` variant style for visual prominence.
+- **HeroSection** — add a short mission-statement paragraph below the subheadline with a subtle styled block for added richness.
 
 ### Remove
 - Nothing removed.
 
 ## Implementation Plan
-1. Create `src/frontend/src/components/SectionHeading.tsx` with all heading variants.
-2. Add heading-related CSS utilities to `index.css` (text-stroke, animated underline draw, gradient headline).
-3. Update `NavBar.tsx` to add a "Headings" nav link.
-4. Create `src/frontend/src/components/HeadingsShowcase.tsx` showcasing all variants.
-5. Import and insert `HeadingsShowcase` into `App.tsx` (after FaqSection).
-6. Update each existing section to use `SectionHeading` — FeaturesSection, AboutSection, TestimonialsSection, PricingSection, TeamSection, ContactSection, BlogSection, PartnersSection, PortfolioSection, HowItWorksSection, AwardsSection, StatsSection.
-7. Validate (typecheck, lint, build).
+1. Create `ParagraphStyles.tsx` — a component with variant prop (`lead | body | caption | blockquote | pull-quote | callout`) that renders styled paragraph wrappers with appropriate Tailwind classes and gold accent treatment.
+2. Create `TypographySection.tsx` — showcase section with 6 variant cards/panels, each displaying a sample paragraph and its variant name/label. Dark/light alternating backgrounds, motion entrance animations.
+3. Update `NavBar.tsx` — insert "Typography" nav link with `data-ocid="nav.typography_link"`.
+4. Update `FooterSection.tsx` — add "Typography" to site links.
+5. Update `App.tsx` — import `TypographySection` and place it after `HeadingsShowcase`.
+6. Update `AboutSection.tsx` — wrap first paragraph in `lead` variant styling (larger text, gold left border accent).
+7. Update `HeroSection.tsx` — add a styled mission-statement callout paragraph block beneath the existing subheadline.
