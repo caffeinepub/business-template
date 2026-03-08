@@ -66,8 +66,34 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 section-dark">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section
+      id="contact"
+      className="relative py-24 lg:py-32 overflow-hidden bg-radial-spotlight"
+    >
+      {/* Contact bg image at low opacity */}
+      <div className="absolute inset-0 pointer-events-none">
+        <img
+          src="/assets/generated/contact-bg.dim_1600x900.jpg"
+          alt=""
+          className="w-full h-full object-cover opacity-[0.08]"
+        />
+      </div>
+      {/* Top edge — fade from light/warm section above */}
+      <div
+        className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none"
+        aria-hidden="true"
+      />
+      {/* Dot grid overlay — reduced so it's more subtle on dark */}
+      <div
+        className="absolute inset-0 bg-dot-grid opacity-[0.14] pointer-events-none"
+        aria-hidden="true"
+      />
+      {/* Diagonal stripe for added texture depth */}
+      <div
+        className="absolute inset-0 bg-stripe-diagonal opacity-[0.08] pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="relative z-10 container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
           <SectionHeading

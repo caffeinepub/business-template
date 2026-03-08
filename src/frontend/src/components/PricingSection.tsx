@@ -70,8 +70,14 @@ export default function PricingSection() {
   };
 
   return (
-    <section id="pricing" className="py-24 lg:py-32 bg-background">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section
+      id="pricing"
+      className="relative py-24 lg:py-32 overflow-hidden bg-noise bg-mesh-gradient"
+    >
+      {/* Edge fades to blend with surrounding sections */}
+      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
+      <div className="relative container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 pt-10">
           <SectionHeading
@@ -81,7 +87,7 @@ export default function PricingSection() {
             highlight="Real Results"
             outlineText="PRICE"
             subtitle="Every plan includes a 30-day money-back guarantee. No lock-in contracts — cancel anytime."
-            darkMode={false}
+            darkMode={true}
             align="center"
           />
         </div>
@@ -200,7 +206,7 @@ export default function PricingSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center text-muted-foreground text-sm mt-8 font-body"
+          className="text-center text-white/50 text-sm mt-8 font-body"
         >
           All prices in USD. Annual billing available at 15% discount. Need
           something bespoke?{" "}

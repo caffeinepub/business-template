@@ -31,8 +31,27 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-24 lg:py-32 section-dark">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section
+      id="testimonials"
+      className="relative py-24 lg:py-32 overflow-hidden"
+    >
+      {/* Background */}
+      <div className="absolute inset-0">
+        <img
+          src="/assets/generated/testimonials-bg.dim_1600x900.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        {/* Core dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/90 via-charcoal-950/82 to-charcoal-950/92" />
+        {/* Top edge — fade from light bg to dark section */}
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent z-10" />
+        {/* Bottom edge — fade back out */}
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent z-10" />
+        {/* Dot grid for texture */}
+        <div className="absolute inset-0 bg-dot-grid opacity-[0.12] pointer-events-none" />
+      </div>
+      <div className="relative z-10 container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
           <SectionHeading

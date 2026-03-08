@@ -39,8 +39,21 @@ const posts = [
 
 export default function BlogSection() {
   return (
-    <section id="blog" className="py-24 lg:py-32 section-mid">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section
+      id="blog"
+      className="relative py-24 lg:py-32 section-warm overflow-hidden"
+    >
+      {/* Subtle diagonal stripe — visually distinct from Features dot-grid */}
+      <div
+        className="absolute inset-0 bg-stripe-diagonal opacity-[0.4] pointer-events-none"
+        aria-hidden="true"
+      />
+      {/* Warm gold tint vignette top */}
+      <div
+        className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-gold-500/[0.04] to-transparent pointer-events-none"
+        aria-hidden="true"
+      />
+      <div className="relative z-10 container mx-auto px-6 max-w-7xl">
         {/* Header */}
         <div className="mb-14">
           <SectionHeading

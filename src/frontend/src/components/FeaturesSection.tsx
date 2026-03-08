@@ -72,8 +72,26 @@ export default function FeaturesSection() {
   };
 
   return (
-    <section id="features" className="py-24 lg:py-32 bg-background">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <section
+      id="features"
+      className="relative py-24 lg:py-32 overflow-hidden bg-background"
+    >
+      {/* Background image — very subtle, tinted warm */}
+      <div className="absolute inset-0">
+        <img
+          src="/assets/generated/features-bg.dim_1600x900.jpg"
+          alt=""
+          className="w-full h-full object-cover opacity-[0.07]"
+        />
+        {/* Gradient edges — blend into bg seamlessly */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
+      </div>
+      {/* Lighter dot grid — differentiated from Blog section */}
+      <div className="absolute inset-0 bg-dot-grid opacity-35 pointer-events-none" />
+      {/* Subtle warm tint overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gold-500/[0.03] via-transparent to-transparent pointer-events-none" />
+
+      <div className="relative z-10 container mx-auto px-6 max-w-7xl">
         {/* Section header */}
         <div className="text-center mb-16">
           <SectionHeading

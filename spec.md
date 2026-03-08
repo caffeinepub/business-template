@@ -1,30 +1,56 @@
 # Business Template
 
 ## Current State
-Full-stack business template with 20+ sections: NavBar, HeroSection, StatsSection, ClientsStrip, FeaturesSection, PortfolioSection, PartnersSection, HowItWorksSection, AboutSection, TestimonialsSection, AwardsSection, PricingSection, FaqSection, HeadingsShowcase, BlogSection, TeamSection, ContactSection, FooterSection, NewsletterBanner, CookieBanner. Includes SectionHeading component with 5 variants. All sections use motion/react animations, gold/charcoal design tokens, scroll effects, and count-up stats.
+A comprehensive business template with sections: Hero, Stats, Clients, Features, Portfolio, Partners, How It Works, About, Testimonials, Awards, Pricing, FAQ, Headings Showcase, Typography, Background Styles, Lists Showcase, Tooltips Showcase, Blog, Team, Contact, Footer. Nav includes links to Headings, Typography, Backgrounds, Lists, Tooltips, Blog.
 
 ## Requested Changes (Diff)
 
 ### Add
-- **Typography Design System Showcase** — a new dedicated section (`#typography`) showing rich paragraph styles: lead paragraph, body copy, blockquote, pull quote, small print/caption, and highlighted callout text. Each style should display a representative paragraph with its HTML/CSS class label, demonstrating professional paragraph design patterns.
-- **Rich Text Content** — upgrade key sections with richer paragraph content: add a longer, multi-paragraph intro to the About section with a visually styled lead paragraph; add paragraph-style service descriptions to the Features section below the card grid; add a mission statement paragraph block to the Hero area.
-- **Paragraph Variants Component** — a reusable `ParagraphStyles` component with named variants: `lead`, `body`, `caption`, `blockquote`, `pull-quote`, `callout`. Used in the typography showcase and optionally in other sections.
+- **FormStyles component** -- A showcase of 10+ HTML form element design variants:
+  1. Default Input -- standard text input with gold focus ring
+  2. Floating Label Input -- label animates up on focus/fill
+  3. Inline Label Input -- label and input on same row
+  4. Input with Icon (prefix) -- search/mail icon inside the input
+  5. Input with Action (suffix) -- button appended to right of input
+  6. Input Group -- multiple inputs joined in a row (e.g., first/last name)
+  7. Textarea variants -- minimal, bordered, autosize label
+  8. Select / Dropdown -- styled native and custom select
+  9. Checkbox group -- styled checkboxes with labels
+  10. Radio group -- pill radio buttons + classic radio
+  11. Toggle Switch -- styled on/off toggle
+  12. Range Slider -- gold-styled HTML range input
+  13. File Upload -- drag-drop zone + button variant
+  14. Form Validation States -- success, error, warning field states with icons
+  15. Full Form Card -- multi-field card example (Name, Email, Company, Message, Submit)
+
+- **TagStyles component** -- A showcase of 12+ tag/badge/chip design variants:
+  1. Default pill tag
+  2. Outlined tag (no fill)
+  3. Gold gradient tag
+  4. Status tags -- success (green), warning (amber), error (red), info (blue)
+  5. Dismissible tag -- with × close button
+  6. Icon + label tag
+  7. Avatar tag -- mini avatar circle + name
+  8. Counter badge -- round notification bubble
+  9. Dot indicator tag -- colored dot + text
+  10. Stacked tag group -- multiple overlapping tags
+  11. Animated tag -- entrance pop/scale animation
+  12. Dark and light theme variants side-by-side
+
+- **FormsShowcase component** -- Wraps FormStyles and TagStyles in a page section (`#forms`) with a SectionHeading and two subsections: "Form Elements" and "Tags & Badges".
+
+- Nav link "Forms" added pointing to `#forms`.
 
 ### Modify
-- **NavBar** — add a "Typography" link pointing to `#typography`.
-- **FooterSection** — add "Typography" link in the site links column; update copyright year if needed.
-- **App.tsx** — import and render the new `TypographySection` between `HeadingsShowcase` and `BlogSection`.
-- **AboutSection** — wrap the opening paragraph in the `lead` variant style for visual prominence.
-- **HeroSection** — add a short mission-statement paragraph below the subheadline with a subtle styled block for added richness.
+- `NavBar.tsx` -- add `{ label: "Forms", href: "#forms", ocid: "nav.forms.link" }` to navLinks and sectionIds.
+- `App.tsx` -- import and render `<FormsShowcase />` after `<TooltipsShowcase />`.
 
 ### Remove
 - Nothing removed.
 
 ## Implementation Plan
-1. Create `ParagraphStyles.tsx` — a component with variant prop (`lead | body | caption | blockquote | pull-quote | callout`) that renders styled paragraph wrappers with appropriate Tailwind classes and gold accent treatment.
-2. Create `TypographySection.tsx` — showcase section with 6 variant cards/panels, each displaying a sample paragraph and its variant name/label. Dark/light alternating backgrounds, motion entrance animations.
-3. Update `NavBar.tsx` — insert "Typography" nav link with `data-ocid="nav.typography_link"`.
-4. Update `FooterSection.tsx` — add "Typography" to site links.
-5. Update `App.tsx` — import `TypographySection` and place it after `HeadingsShowcase`.
-6. Update `AboutSection.tsx` — wrap first paragraph in `lead` variant styling (larger text, gold left border accent).
-7. Update `HeroSection.tsx` — add a styled mission-statement callout paragraph block beneath the existing subheadline.
+1. Create `src/frontend/src/components/FormStyles.tsx` with all form variants.
+2. Create `src/frontend/src/components/TagStyles.tsx` with all tag/badge variants.
+3. Create `src/frontend/src/components/FormsShowcase.tsx` wrapping both.
+4. Update `NavBar.tsx` to add the "Forms" nav link.
+5. Update `App.tsx` to import and mount `<FormsShowcase />`.
